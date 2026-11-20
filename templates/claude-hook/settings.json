@@ -1,0 +1,11 @@
+{
+  "extraKnownMarketplaces": {
+    "kaizen": { "source": { "source": "github", "repo": "nikosanarg/kaizen-harness" }, "autoUpdate": true }
+  },
+  "enabledPlugins": { "kaizen-harness@kaizen": true },
+  "hooks": {
+    "SessionStart": [
+      { "hooks": [{ "type": "command", "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/kaizen-harness.mjs\"", "timeout": 90 }] }
+    ]
+  }
+}

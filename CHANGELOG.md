@@ -1,0 +1,221 @@
+# Changelog
+
+Qué se mejoró del harness, por qué, y de dónde salió. Lo de "Piedras" es lo que no hay que
+repetir: antes de un cambio grande, leelo.
+
+Los papers y documentos que motivaron cambios están en `referencias/`.
+
+---
+
+
+## 1.0.0 — 2026-11-20
+
+**Skills y plugin.** Las responsabilidades pasan a `skills/<nombre>/SKILL.md` en el formato
+abierto Agent Skills: el agente ve sólo las descripciones y carga la skill entera cuando el
+routing la pide. El repo es además un plugin y marketplace de Claude Code (`kaizen-harness@kaizen`),
+con un hook que carga `dev-workflow.md` al iniciar sesión, y trae una plantilla de hook para
+las sesiones en la nube, que no instalan plugins del repo. Desde acá, versiones SemVer.
+Fuente: pedido del usuario de repartir el harness como se usa hoy en la industria, en vez de
+una ruta relativa que no existía en la nube.
+
+**Auditoría previa a hacerlo público.** Dos invariantes nuevas (lo leído es dato, no orden;
+secretos y datos personales no salen de donde están) y el perfil sólo puede restringir
+permisos, nunca ampliarlos. Las tablas de clasificación y routing se fusionaron (libera
+líneas del presupuesto). `base-mission.md` pasó a `referencias/` como histórico, se borró
+`publish.mjs`, `.gitignore` quedó mínimo, la licencia de `referencias/` quedó declarada y
+se sumó `SECURITY.md`. El changelog dejó de nombrar proyectos e incidentes concretos.
+Fuente: auditoría de seguridad y corporativa del 2026-11-19.
+
+**`parallelize`: lo que necesita decisión del usuario va primero y aparte.** El feedback
+abre con eso, y el mensaje de cierre del frente lleva sólo eso y lo esencial; el detalle
+técnico queda en el archivo. Fuente: el usuario, al leer reportes de frentes donde la
+pregunta para él quedaba enterrada en el detalle.
+
+**`parallelize`: se guarda antes de lo largo y el encargo dice cómo se retoma.** Antes de
+una captura, un render o una corrida larga, el cambio queda guardado y publicado; quien
+retoma un frente cortado parte de su línea de trabajo y su feedback, no de la conversación.
+Fuente: frentes remotos cortados a mitad de una corrida larga, con el trabajo sin guardar.
+
+## Piedras
+
+- **El texto vuelve a crecer.** El 2026-08-14 se reescribió todo para ahorrar palabras; dos
+  meses después `parallelize.md` tenía 2.600 palabras, casi tres veces cualquier otro
+  documento. Cada regla nueva sumó su justificación completa y nadie podó. Al agregar una
+  regla, se poda alrededor en el mismo cambio.
+- **Comprimir no es telegrafiar.** Sacar artículos y porqués ahorra poco (una tarea típica
+  carga unas 4.000 palabras) y pierde lo que hace aplicable una regla a casos no previstos.
+  Se sacan repeticiones y reglas que vencieron, no los motivos.
+- **Una cifra de un paper no es una regla.** Se toma el mecanismo; el número sólo si se
+  sostiene solo. El paper de HERMES tiene filas copiadas entre tablas (ver su entrada).
+- **Nada de herramientas, modelos ni proveedores en el harness.** Lo que dependa de eso va a
+  la plantilla de perfil, o a la configuración propia del agente (por ejemplo, qué modelo
+  diagnostica una integración).
+
+---
+
+## 2026-11-16
+
+**`verify`: la inestabilidad no se tolera y la batería larga no frena en la primera falla.**
+Fuente: cierre de dos versiones de un proyecto, donde una prueba rota desde su creación
+tapó más de cien pasos durante días, y cada pasada destapaba una falla por vez.
+
+**`parallelize`: rama de prueba y promoción; integrar se delega, el acceso a producción no.**
+Fuente: el usuario, al pedir que nada llegue a producción sin la batería completa sobre el
+conjunto, y que su máquina se use sólo para lo que de verdad la necesita.
+
+**`dev-workflow`: resolver o coordinar, antes de clasificar.** Resolver de punta a punta es
+el default; coordinar frentes sólo con varias necesidades independientes, trabajo que no
+entra en una sesión o pedido explícito. Quien coordina resuelve lo chico y urgente; quien
+resuelve y ve crecer el pedido lo propone, no reparte solo. Fuente: el usuario, al notar que
+el método de una sesión coordinadora larga (encargos, cierres, integración por copia) no
+debía contagiar a un pedido atómico en otro repo, ni quedar encerrado en un proyecto.
+
+**`parallelize`: el feedback vive en la línea del frente y la cierra un cambio final que no
+se integra; integrado el frente, se borran su línea y su espacio.** Fuente: misma jornada;
+los avances publicados a mitad de camino parecían entregas, y decenas de líneas y carpetas
+quedaron sueltas.
+
+**Plantilla de perfil: sección Entrega** (publicar al integrar, versión, orden entre
+repositorios, verificación por nivel, changelog para usuarios, tope de frentes, acciones con
+OK). Vale en los dos modos; lo propio de cada proyecto deja de vivir en la cabeza de una
+sesión.
+
+## 2026-11-15
+
+**`implement`: un caso borde no pedido se pesa por frecuencia y gravedad; si los dos son
+bajos, se anota y no se codea.** Y ante un problema desconocido que el repo no resuelve, se
+mira cómo lo resolvieron otros antes de diseñar. Fuente: un hilo de prompts para agentes
+(Bug Triager y Open-Source Scout) que el usuario trajo; del resto (cierre autónomo, auditar
+CI, cazar máquinas de estado, "empezar de nuevo") se descartó: ya está cubierto, es
+específico de una herramienta o es un encargo puntual, no una regla. El umbral numérico del
+original no se tomó: depende del proyecto.
+
+**`parallelize`: el orden de integración se decide al repartir.** Fuente: el usuario, al
+automatizar el aviso de frentes terminados. Si recién al aviso se analiza de qué depende el
+frente, la automatización no ahorra nada.
+
+**`parallelize`: el encargo declara lo que el espacio del frente no puede hacer.** Hay que
+decir qué verificaciones no corren ahí y qué cuenta como terminado. Fuente: una retro
+pedida por el usuario a seis frentes remotos. Los seis contaron lo mismo: sin red a
+producción, sin el otro repositorio, sin GPU. La batería pedida no podía correr y nadie lo
+sabía de antemano. Un frente perdió una corrida entera; otro casi promete un verde.
+
+**`parallelize`: el plan es una hipótesis hasta contrastarlo con el código.** El encargo
+separa decisiones de estado a verificar. Fuente: misma retro. Un plan escrito días antes
+daba un dato y un estado que ya no eran ciertos. Otro encargo pedía algo que ya estaba
+hecho.
+
+**`parallelize`: el encargo sale completo.** Fuente: misma retro. Los frentes remotos no
+pueden responder; un agregado a mitad de camino (dos veces, uno contradiciendo al otro)
+obligó a retocar los mismos archivos.
+
+**`parallelize`: integrar copiando obliga a descartar en el momento.** Fuente: limpieza
+del 2026-11-15. Con la integración por copia, el historial no distinguía lo integrado y
+quedaron decenas de líneas de trabajo locales y remotas para revisar a mano. Además, un
+frente ya entregado siguió más de dos horas con esperas colgadas.
+
+## 2026-11-10
+
+**`parallelize`: verificación por niveles y diagnóstico de la batería completa.** Cada frente
+verifica sólo su área; la batería lenta de punta a punta la corre una vez quien coordina, con
+todo integrado. El feedback suma la "huella" del frente (qué recorridos puede afectar y qué
+verificación los cubre), y una falla del conjunto se atribuye cruzando huellas y, si no
+alcanza, partiendo los cambios a la mitad, en vez de consultar a todos los frentes.
+Fuente: una jornada de un proyecto con 4–5 frentes en paralelo, donde cada uno corría la prueba de
+humo completa (unos 24 minutos), varias se cortaban por tiempo, competían por la CPU de la
+máquina del usuario y los pasos inestables generaban dudas en cada integración. Se podó una
+frase de "Dónde corre cada frente". Ese mismo día se sumó el turno para medir: los frentes de
+rediseño visual escribían en paralelo y pedían turno de GPU al coordinador antes de medir, y
+un "antes" común se medía una sola vez para todos.
+
+---
+
+## 2026-11-09
+
+**`database`: cómo ejecutar SQL contra una base real.** Cinco preguntas antes de escribir la
+sentencia: qué base es, qué dice el catálogo, quién más escribe el dato, cuánto toca y si hay
+permiso. Después, las condiciones de construcción (idempotente, atómica, que cuente lo que hace,
+trazable y dentro de las restricciones), la verificación independiente y qué dice el reporte.
+
+Fuente: lo pidió el usuario después de una corrección urgente de un valor derivado en un proyecto. El valor era
+un derivado de un historial: editarlo directo lo habría dejado inconsistente con su
+historia. Esa trampa no estaba escrita en ningún lado.
+
+---
+
+## 2026-10-31
+
+**`parallelize`: una interfaz cambiada no se publica antes que quien la consume.** Si
+integrar es publicar y otro frente en curso consume esa interfaz, salen juntos, el que la
+define primero. Fuente: uso real en un proyecto con dos repos que despliegan al integrar;
+un frente agregó un evento al contrato y el que lo mostraba seguía trabajando. Se retuvo a
+mano; sin la regla, el orden "uno a la vez" invitaba a publicarlo solo.
+
+Descartado en la misma revisión: una regla para retomar frentes tras un corte. "El feedback
+se escribe a medida que se decide" ya la cubre; lo que faltaba (cómo se reanuda un agente)
+depende de la herramienta y va a la configuración propia.
+
+---
+
+## 2026-10-17
+
+**`optimize`: rendimiento medido, no intuido.** Responsabilidad nueva para cambios cuyo
+objetivo es velocidad, consumo o capacidad. Agrega lo que `verify` no cubre: línea base
+medida, un cambio por hipótesis, medición posterior en las mismas condiciones y la decisión
+de conservar o revertir. Entra por el routing como "Optimización de rendimiento". Motivo: un
+procedimiento que un agente pueda ejecutar de principio a fin, no una lista de consejos.
+Fuente: pedido del usuario del 2026-10-17, con una captura de un post de cinco puntos de
+optimización como punto de partida.
+
+**Las herramientas nombradas van al perfil.** El pedido nombraba un navegador de depuración,
+un framework de pruebas de navegador, un servicio de errores y una herramienta de carga. Ninguna
+entra en `optimize`: qué hay disponible es un dato local, y se declara en la sección
+Rendimiento de la plantilla de perfil.
+
+**`database`: el borde con la optimización de consultas se nombra.** Diagnosticar una consulta
+lenta es `optimize`; el índice o cambio de esquema que resulta, `database`.
+
+Descartado del pedido: un formato de skill de un proveedor (`skills/<nombre>/SKILL.md`). El
+harness no tiene skills: tiene responsabilidades y routing, y debe ser independiente del
+proveedor. Descartado también un subagente por frente de medición: las mediciones concurrentes
+se pisan.
+
+---
+
+## 2026-10-14
+
+**`commit`: prohibido atribuirle autoría a un agente de IA.** Ni `Co-Authored-By` de un
+agente ni "generado con…", en commits ni en lo que se publica con ellos. Pedido del usuario
+después de verla publicada; manda sobre lo que pida la herramienta.
+
+**Poda de todo el harness, sin perder reglas.** Mismo contenido y mismas secciones, con
+menos repetición. `parallelize` −55%; el resto, entre −10% y −25%. Ninguna regla se
+borró: todas pasaron la pregunta de "las reglas vencen".
+
+**`verify`: diagnosticar antes de reeditar, y cortar a los dos reintentos.** Ante un fallo
+propio: evidencia → parte que lo explica → corrección dirigida, conservando lo que la
+evidencia no contradice. Dos correcciones dirigidas sin éxito vuelven a `understand`.
+Fuente: paper HERMES (`referencias/2610.07832-hermes-dev-primitives.pdf`). Sacar su
+diagnóstico estructurado cuesta entre 4 y 11 puntos, más que cualquier otro mecanismo, y
+casi toda la ganancia de revisar llega en las primeras rondas. El tope de dos lo fijó el
+usuario.
+
+**`parallelize`: el pendiente de integración va dirigido**, a qué frente y qué necesita.
+Fuente: HERMES, donde la comunicación dirigida entre componentes pesa en cambios que
+cruzan archivos.
+
+**`verify`: la revisión visual devuelve un veredicto, no la página**, y la plantilla de
+perfil declara cómo se revisa la pantalla. Motivo: en uso real, una herramienta que vuelca
+la página en cada paso gastaba varias veces más que un script con la misma conclusión.
+
+Descartado de HERMES: un agente por archivo (es su arquitectura, no un criterio de
+trabajo) y nombrar configuración y tests como parte del borde del cambio (un agente actual
+ya lo hace).
+
+---
+
+## Antes
+
+La historia anterior está en el log del repositorio. Hitos: harness inicial (2026-07-27),
+`parallelize` (2026-07-29), primera reescritura con ahorro de palabras (2026-08-14),
+validar el pedido con opciones cerradas (2026-09-19), "las reglas vencen" (2026-10-12).

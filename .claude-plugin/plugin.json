@@ -1,0 +1,9 @@
+{
+  "name": "kaizen-harness",
+  "version": "1.0.0",
+  "description": "Base de conocimiento de ingeniería para agentes: invariantes y routing (dev-workflow) siempre cargados, y una skill por responsabilidad (understand, implement, test, verify, commit, interface, database, infra, optimize, parallelize).",
+  "author": { "name": "nikosanarg" },
+  "repository": "https://github.com/nikosanarg/kaizen-harness",
+  "license": "CC0-1.0",
+  "keywords": ["engineering", "workflow", "agents", "skills"]
+}

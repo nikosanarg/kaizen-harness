@@ -1,0 +1,14 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node -e \"process.stdout.write(require('fs').readFileSync(require('path').join(process.env.CLAUDE_PLUGIN_ROOT,'dev-workflow.md'),'utf8'))\""
+          }
+        ]
+      }
+    ]
+  }
+}

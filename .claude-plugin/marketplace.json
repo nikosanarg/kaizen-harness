@@ -1,0 +1,12 @@
+{
+  "name": "kaizen",
+  "owner": { "name": "nikosanarg" },
+  "description": "Marketplace del harness de ingeniería kaizen.",
+  "plugins": [
+    {
+      "name": "kaizen-harness",
+      "source": "./",
+      "description": "Invariantes, routing y una skill por responsabilidad del trabajo de ingeniería."
+    }
+  ]
+}
