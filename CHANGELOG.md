@@ -8,6 +8,14 @@ Los papers y documentos que motivaron cambios están en `referencias/`.
 ---
 
 
+## 2.2.0 — 2026-11-28
+
+**El harness se pide, no se edita desde otro trabajo.** Un agente que trabaja en otro proyecto propone por issue
+(plantilla "Propuesta de cambio"), o en su feedback si no puede abrirlo. Lo aplica sólo quien mantiene el harness.
+`CONTRIBUTING.md` define qué va directo (redacción, herramientas opcionales, reglas cortas) y qué pasa por el dueño
+(lo que cambia una regla o un permiso). Fuente: en un día, dos sesiones editaron el harness a la vez y se pisaron;
+una lo firmó como la herramienta, y otra mandó tres propuestas por mensajes que no dejan rastro.
+
 ## 2.1.3 — 2026-11-28
 
 **`parallelize`: antes de lanzar, que el frente pueda trabajar solo.** Los permisos con que arranca tienen

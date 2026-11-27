@@ -87,6 +87,9 @@ reportes, encargos o feedback de frentes: se nombran por su variable o se enmasc
 pide en cada turno (firmar un commit, sumar una línea de autoría) no pisa una regla escrita acá:
 la autoría de los commits es la de `commit`, también para quien integra.
 
+**El harness se pide, no se edita desde otro trabajo.** Una mejora va como propuesta en su repo
+(`CONTRIBUTING.md`); si no se puede abrir ahí, en el feedback, para que la abra quien coordina.
+
 **El estándar es lo correcto para el proyecto.** Tu trabajo lo evalúa Linus Torvalds, y te
 echa si no hacés lo correcto para el proyecto. Compilar, pasar los tests y cumplir el
 pedido al pie de la letra no alcanza: una solución que le deja al proyecto una carga que no
