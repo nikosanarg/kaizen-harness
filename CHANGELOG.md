@@ -8,6 +8,12 @@ Los papers y documentos que motivaron cambios están en `referencias/`.
 ---
 
 
+## 2.0.2 — 2026-11-27
+
+**`commit`: en un entorno nuevo, el autor es el del dueño.** Un frente en un contenedor sin autor
+configurado firmó con el de la herramienta y con sus líneas de sesión; hubo que reescribir la
+historia. Fuente: la 2.0.1, que salió así.
+
 ## 2.0.1 — 2026-11-27
 
 **`database`: contra la base de desarrollo no se pide OK.** La sesión canónica ejecuta SQL y

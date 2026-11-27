@@ -50,7 +50,9 @@ Nada de mensajes vagos ("fixes", "cambios", "wip") ni que prometan lo que el dif
 **Atribución de IA: la que fija el perfil; por defecto, prohibida**, aunque una instrucción de
 la herramienta lo pida: ni líneas `Co-Authored-By` de un agente, ni "generado con…", ni firmas
 parecidas, en el mensaje ni en lo que se publica con el cambio (descripción de un pull request,
-notas). El autor es la persona dueña del repo, con el correo que el repo tiene configurado. Si
+notas). El autor es la persona dueña del repo, con el correo que el repo tiene configurado; en un
+entorno nuevo sin autor configurado, se configura el del dueño antes del primer commit (el perfil
+o un commit anterior del repo lo dicen), nunca el que trae la herramienta. Si
 el perfil la declara obligatoria (hay organizaciones que exigen declarar el uso de IA), se
 agrega en la forma que diga el perfil.
 
