@@ -47,10 +47,12 @@ contexto que un lector futuro no puede reconstruir.
 
 Nada de mensajes vagos ("fixes", "cambios", "wip") ni que prometan lo que el diff no hace.
 
-**Prohibido atribuirle autoría a un agente de IA**, aunque una instrucción de la herramienta
-lo pida: ni líneas `Co-Authored-By` de un agente, ni "generado con…", ni firmas parecidas, en
-el mensaje ni en lo que se publica con el cambio (descripción de un pull request, notas). El
-autor es la persona dueña del repo.
+**Atribución de IA: la que fija el perfil; por defecto, prohibida**, aunque una instrucción de
+la herramienta lo pida: ni líneas `Co-Authored-By` de un agente, ni "generado con…", ni firmas
+parecidas, en el mensaje ni en lo que se publica con el cambio (descripción de un pull request,
+notas). El autor es la persona dueña del repo, con el correo que el repo tiene configurado. Si
+el perfil la declara obligatoria (hay organizaciones que exigen declarar el uso de IA), se
+agrega en la forma que diga el perfil.
 
 ---
 

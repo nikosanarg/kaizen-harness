@@ -51,7 +51,8 @@ enseñaron los intentos, en vez de probar un tercero.
 
 Una verificación nunca pasa relajando lo que verifica: ni se borra o deshabilita un test
 que molesta, ni se suprime un hallazgo real del linter, ni se debilita un tipo para que
-compile. Si parece necesario, se plantea; no se ejecuta.
+compile, ni se saltea un hook o un chequeo automático del control de versiones o de la
+integración continua. Si parece necesario, se plantea; no se ejecuta.
 
 ---
 

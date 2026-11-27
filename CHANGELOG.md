@@ -8,6 +8,20 @@ Los papers y documentos que motivaron cambios están en `referencias/`.
 ---
 
 
+## 1.0.2 — 2026-11-27
+
+**Cierre de la auditoría previa a publicar.**
+
+- **Gobernanza:** `CONTRIBUTING.md` y `.github/CODEOWNERS`. Todo cambio a las reglas entra por PR
+  con la revisión del dueño, porque el repo termina como instrucciones de agentes en otros repos.
+- **`verify`:** tampoco se saltea un hook ni un chequeo automático (`--no-verify` y equivalentes).
+- **`commit`:** la atribución de IA es una opción del perfil, prohibida por defecto. Antes era una
+  prohibición fija, que chocaba con las organizaciones que exigen declararla.
+- **Plantilla de perfil:** la línea de atribución en § Control de versiones.
+
+Fuente: la auditoría de 2026-11 (puntos 1, 3 y menores) y el commit 1.0.1, que salió con un
+correo personal: el autor es el correo anónimo de GitHub.
+
 ## 1.0.1 — 2026-11-25
 
 **Contexto de producto en el repo (`.product/`).** Plantilla nueva en `templates/product/` y un

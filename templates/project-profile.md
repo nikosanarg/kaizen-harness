@@ -140,6 +140,9 @@ coordina frentes.>
 <Sólo si el proyecto tiene reglas propias: convención de ramas, formato de commit,
 restricciones sobre qué se commitea o dónde.>
 
+- Atribución de IA en commits y pull requests: <prohibida (default) | obligatoria, con esta
+  forma: … | indiferente>
+
 ---
 
 ## Responsabilidades que no aplican

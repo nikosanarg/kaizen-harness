@@ -21,6 +21,7 @@ Cuando trabajás en **otro** repo, este archivo no se lee. El punto de entrada e
 | `.claude-plugin/`, `hooks/` | Empaquetado como plugin. No llevan reglas. |
 | `SECURITY.md` | Cómo reportar una regla insegura. |
 | `README.md` | Documentación para humanos. Ningún agente la necesita para trabajar. |
+| `CONTRIBUTING.md`, `.github/CODEOWNERS` | Cómo se contribuye y quién revisa. No llevan reglas. |
 | `CHANGELOG.md` | Qué se cambió del harness, por qué y de dónde salió, más las "piedras" a no repetir. |
 | `referencias/` | Papers y documentos que motivaron cambios. Nadie los carga para trabajar. |
 
