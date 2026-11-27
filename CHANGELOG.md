@@ -17,6 +17,12 @@ declaran en el perfil con su motivo. Sigue prohibido el test que no puede fallar
 de perfil pide el umbral actual y las exclusiones. Fuente: el usuario, al pedir CI en un
 proyecto: "100% de cobertura, es lo que debería decir el harness".
 
+**`parallelize`: la sesión canónica integra y publica con permiso permanente.** Sin pedir OK
+por cada integración en la rama principal o la de prueba; sí lo que el perfil declare. El
+frente nunca escribe en esas ramas. Fuente: el usuario: "la sesión canónica siempre tiene
+permiso explícito para commit y push a dev y main/master; la regla es sólo para los
+subagentes, por si se ponen a integrar de prepo".
+
 **`parallelize`: el frente publica en su línea sin pedir permiso.** La prohibición es la rama
 principal y las líneas ajenas, no la propia. Fuente: el usuario, al ver frentes que frenaban a
 pedir permiso para guardar en su rama.

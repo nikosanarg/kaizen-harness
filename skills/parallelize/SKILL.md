@@ -204,6 +204,12 @@ en el acto, para que no diverjan.
 y verificar lo hace cualquier espacio con el código. Migraciones, confirmar lo publicado y lo
 que necesite el recurso compartido quedan en quien tiene ese acceso.
 
+**La sesión canónica integra y publica con permiso permanente.** Guarda y publica en la rama
+principal y en la de prueba sin pedir OK por cada integración: el usuario y ella trabajan en
+sincronía, y esperar su OK en cada frente frena todo. Sigue pidiendo OK lo que el perfil
+declare en § Entrega. Un frente nunca escribe en esas ramas, aunque pueda: integrar de prepo
+saltea la lectura del feedback, el orden y la batería del conjunto.
+
 **El orden se decide al repartir, no al llegar.** Cuando un frente termina ya se sabe si
 entra en seguida o espera a otro (una interfaz que el otro define, un archivo que también
 toca). Decidirlo recién ahí deja el frente terminado esperando por algo que se sabía al
