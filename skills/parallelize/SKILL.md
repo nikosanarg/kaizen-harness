@@ -96,6 +96,10 @@ integración y sigue.
   la corre una sola vez quien reúne todos, con todo integrado: corrida por frente, multiplica
   el tiempo y mide lo que los demás todavía no integraron.
 - Lo que el pedido dejó para más adelante, ningún frente lo hace por su cuenta.
+- **Contra una base real, el frente sólo lee.** Escritura, cambio de esquema o migración no
+  los ejecuta: los deja como archivos idempotentes en su línea, y su feedback dice en qué
+  orden aplicarlos al integrar. Los aplica quien integra (`database`), que es quien sabe en qué
+  estado está la base con todos los frentes juntos.
 - **El frente no versiona.** Ni versión, ni changelog, ni roadmap, ni contexto de producto:
   los cierra quien integra, sobre el conjunto (ver "Al reintegrar"). Tocados por cada frente,
   chocan en cada integración. Lo que el frente escribiría ahí va a su feedback.

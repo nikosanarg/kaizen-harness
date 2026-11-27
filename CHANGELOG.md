@@ -8,6 +8,20 @@ Los papers y documentos que motivaron cambios están en `referencias/`.
 ---
 
 
+## 2.0.0 — 2026-11-27
+
+**`test`: el objetivo de cobertura es 100%.** Cambia de sentido la regla anterior ("se
+mantiene, no se persigue"). Lo nuevo llega cubierto entero; donde el proyecto no llega, el
+umbral es un trinquete que arranca en la cobertura real y sólo sube; las exclusiones se
+declaran en el perfil con su motivo. Sigue prohibido el test que no puede fallar. La plantilla
+de perfil pide el umbral actual y las exclusiones. Fuente: el usuario, al pedir CI en un
+proyecto: "100% de cobertura, es lo que debería decir el harness".
+
+**`parallelize`: contra una base real, el frente sólo lee.** Escritura, esquema y migraciones
+quedan como archivos en su línea, con el orden de aplicación en el feedback, y los aplica
+quien integra. Fuente: el usuario, al definir que los SQL los aplica la orquestadora y los
+subagentes sólo disparan SELECT.
+
 ## 1.1.0 — 2026-11-27
 
 **La sesión canónica coordina por defecto, y el método de frentes deja de ser una variante.**

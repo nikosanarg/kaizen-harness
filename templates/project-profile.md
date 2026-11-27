@@ -92,7 +92,8 @@ contratos externos, integraciones críticas, legado en migración.>
 
 - Framework: `<...>`
 - Dónde viven los tests: `<...>`
-- Umbral de cobertura, si el proyecto define uno: `<... o "no hay">`
+- Cobertura: objetivo 100%; umbral actual del trinquete y cómo se sube: `<N% ...>`
+- Exclusiones de la medición, cada una con su motivo: `<... o "ninguna">`
 
 ## Rendimiento
 

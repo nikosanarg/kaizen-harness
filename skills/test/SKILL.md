@@ -82,11 +82,13 @@ introduce.
 
 ## Cobertura
 
-Se **mantiene**, no se persigue: lo nuevo llega con sus caminos relevantes cubiertos y el
-proyecto no queda peor.
+**El objetivo es 100%.** Lo nuevo llega cubierto entero, y lo que se toca no queda con menos
+cobertura que antes. Donde el proyecto todavía no llega, el umbral es un **trinquete**: arranca
+en la cobertura real, sólo sube, y bajarlo rompe la verificación. Lo declara el perfil.
 
-Nunca tests sólo para subir el número. Si el perfil declara un umbral, se respeta; si no,
-no se inventa.
+Lo que no es código de producción (mocks, tipos puros, material de trabajo) se excluye de la
+medición en el perfil, cada exclusión con su motivo. Excluir para inflar el número es un
+defecto, igual que un test que no puede fallar: cubre líneas sin probar nada.
 
 ---
 
