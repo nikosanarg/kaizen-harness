@@ -8,6 +8,22 @@ Los papers y documentos que motivaron cambios están en `referencias/`.
 ---
 
 
+## 1.1.0 — 2026-11-27
+
+**La sesión canónica coordina por defecto, y el método de frentes deja de ser una variante.**
+`dev-workflow`: la sesión que el usuario declara canónica de un proyecto reparte cada pedido
+en frentes remotos, los escucha, integra y versiona; las demás siguen resolviendo. `parallelize`:
+cada frente es una sesión remota propia; el frente no versiona ni toca changelog, roadmap ni
+contexto de producto; el feedback va por defecto en `.handoff/<frente>.md` y lo cierra un cambio
+`HANDOFF:`; quien coordina escucha con un vigía que no consume contexto e integra al aviso sin
+que se lo pidan. Fuente: el usuario, al comparar dos proyectos que coordinaban distinto (en uno
+cada frente versionaba y chocaban; en el otro versionaba quien integraba) y elegir el segundo
+como la metodología de todos; y al corregir a una orquestadora que esperaba con recordatorios
+programados en vez del script que "revisaba cada 1 o 2 minutos y no gastaba tokens".
+
+**`herramientas/vigia/`**: ese script, rescrito y guardado en el harness. Se había perdido por
+vivir en el espacio temporal de una sesión. Sólo usa git; ninguna regla depende de él.
+
 ## 1.0.2 — 2026-11-27
 
 **Cierre de la auditoría previa a publicar.**

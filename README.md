@@ -49,6 +49,7 @@ templates/
   project-profile.md     Plantilla de hechos locales, se copia a cada repo.
 .claude-plugin/          Empaquetado como plugin y marketplace de Claude Code.
 hooks/                   Hook del plugin: carga dev-workflow.md al iniciar sesión.
+herramientas/vigia/      Script que escucha las líneas de los frentes y despierta al coordinador.
 AGENTS.md                Reglas para editar este repo.
 CHANGELOG.md             Qué se mejoró, por qué, y qué no repetir.
 SECURITY.md              Cómo reportar una regla insegura.

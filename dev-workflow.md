@@ -21,8 +21,10 @@ en su documento, y sólo ahí.
 **Resolver es el default**: una sesión hace el pedido de punta a punta e integra ella
 misma, aunque toque varios archivos o repos. **Se coordina** —se reparte en frentes que
 otros ejecutan, ver `parallelize`— sólo si hay varias necesidades independientes a la vez,
-si el trabajo no entra en una sesión (tiempo, otra máquina, bloquearía la conversación), o
-si el usuario lo pide. Quien coordina resuelve él mismo lo chico y urgente; quien resuelve y
+si el trabajo no entra en una sesión (tiempo, otra máquina, bloquearía la conversación), si
+el usuario lo pide, o si la sesión es la **canónica** del proyecto: la orquestadora que
+declaró el usuario, que reparte cada pedido en frentes remotos, los escucha, integra y
+versiona. Quien coordina resuelve él mismo lo chico y urgente; quien resuelve y
 ve crecer el pedido lo dice y propone coordinar, no reparte por su cuenta.
 
 ---

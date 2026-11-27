@@ -19,6 +19,7 @@ Cuando trabajás en **otro** repo, este archivo no se lee. El punto de entrada e
 | `templates/product/` | Sólo la plantilla del contexto de producto (`.product/`) de un proyecto. |
 | `templates/claude-hook/` | El hook que lleva el harness a las sesiones en la nube de Claude Code. |
 | `.claude-plugin/`, `hooks/` | Empaquetado como plugin. No llevan reglas. |
+| `herramientas/<nombre>/` | Ayudas ejecutables opcionales para aplicar una regla (por ejemplo, el vigía de `parallelize`). No llevan reglas: la regla vive en su skill. |
 | `SECURITY.md` | Cómo reportar una regla insegura. |
 | `README.md` | Documentación para humanos. Ningún agente la necesita para trabajar. |
 | `CONTRIBUTING.md`, `.github/CODEOWNERS` | Cómo se contribuye y quién revisa. No llevan reglas. |
@@ -60,6 +61,8 @@ entre proyectos va en la plantilla de perfil, no acá.
 **Nada que dependa de ejecutar algo.** El harness funciona leyendo documentación. El
 empaquetado (`.claude-plugin/`, `hooks/`, `templates/claude-hook/`) sólo hace llegar los
 archivos y cargar `dev-workflow.md`; ninguna regla depende de él, y sin él todo se lee por ruta.
+Lo mismo vale para `herramientas/`: ayudan a cumplir una regla, pero la regla se entiende y se
+puede cumplir sin ellas.
 
 **Independiente del proveedor de IA.** El texto de las reglas no menciona herramientas,
 comandos ni nombres de agentes concretos. Las skills siguen el formato abierto Agent Skills;

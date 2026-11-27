@@ -96,16 +96,21 @@ integración y sigue.
   la corre una sola vez quien reúne todos, con todo integrado: corrida por frente, multiplica
   el tiempo y mide lo que los demás todavía no integraron.
 - Lo que el pedido dejó para más adelante, ningún frente lo hace por su cuenta.
+- **El frente no versiona.** Ni versión, ni changelog, ni roadmap, ni contexto de producto:
+  los cierra quien integra, sobre el conjunto (ver "Al reintegrar"). Tocados por cada frente,
+  chocan en cada integración. Lo que el frente escribiría ahí va a su feedback.
 
 ---
 
 ## El feedback de cada frente
 
 Quien integra no vio nada de adentro; sin feedback sólo queda releer el cambio. Va **en un
-archivo dentro de la línea de trabajo del frente**, no en el último mensaje ni en un canal
-aparte, y **se escribe a medida que se decide**: es por donde se lo retoma. **El frente
-termina con un último cambio que sólo cierra ese archivo y lo declara terminado**; nada va
-después. Así quien coordina sabe que terminó sin preguntarle ni adivinar por silencio (un
+archivo dentro de la línea de trabajo del frente** —`.handoff/<frente>.md`, salvo que el
+perfil declare otro; si el frente toca varios repositorios, el encargo dice en cuál—, no en
+el último mensaje ni en un canal aparte, y **se escribe a medida que se decide**: es por
+donde se lo retoma. **El frente termina con un último cambio que sólo cierra ese archivo y
+lo declara terminado**, con un asunto que empieza con `HANDOFF:`; nada va después. Así quien
+coordina sabe que terminó sin preguntarle ni adivinar por silencio (un
 frente que publica avances a mitad de camino parece terminado), y ese cambio final no se
 integra.
 
@@ -152,6 +157,10 @@ recursos—, se propaga a todos; si no, divergen desde el primer paso.
 
 ## Dónde corre cada frente
 
+**Cada frente es una sesión remota propia**, salvo que el perfil diga otra cosa: no compite
+por el contexto ni por la máquina de quien coordina, y sigue aunque quien coordina se corte.
+Repartir en agentes locales es la excepción, no el atajo.
+
 **Cada frente en su propio espacio aislado.** Sobre uno compartido, cada cambio queda
 integrado al escribirse y la verificación de cierre mide lo que otros tenían a medio hacer.
 
@@ -166,8 +175,14 @@ En control de versiones:
 Si los espacios no se pueden separar, o un encargo no sale autocontenido, no se paraleliza:
 se hace en serie. La velocidad no le gana a la calidad.
 
-**Esperar no es trabajo.** Quien coordina también es un frente: avanza en lo que no depende
-de los demás —lo suyo, los feedbacks ya escritos, la reintegración—.
+**Esperar no es trabajo, y escuchar tampoco debería costar.** Quien coordina también es un
+frente: avanza en lo que no depende de los demás —lo suyo, los feedbacks ya escritos, la
+reintegración—. No espera mirando ni consultando el estado de cada frente, ni se programa
+recordatorios: deja un **vigía**, un proceso que no consume contexto, revisa la línea de
+cada frente cada uno o dos minutos y lo despierta cuando aparece un cambio de cierre (el del
+harness está en `herramientas/vigia/`). Al aviso integra en el acto, sin que nadie se lo
+pida, en el orden decidido al repartir, y vuelve a dejar el vigía con los frentes que siguen
+abiertos. Si el vigía vence sin novedad, se mira si los frentes siguen vivos.
 
 ---
 
