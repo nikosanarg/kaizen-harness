@@ -8,6 +8,14 @@ Los papers y documentos que motivaron cambios están en `referencias/`.
 ---
 
 
+## 1.0.1 — 2026-11-25
+
+**Contexto de producto en el repo (`.product/`).** Plantilla nueva en `templates/product/` y un
+paso en `dev-workflow.md`: si el repo tiene `.product/`, se lee antes de trabajar. Estado,
+decisiones del dueño del producto y método de trabajo pasan a vivir versionados en el repo
+en vez de en la memoria local de un agente, que no ven las sesiones en la nube ni otra máquina.
+Fuente: pedido del usuario, al ver que el contexto de un proyecto dependía de una sola PC.
+
 ## 1.0.0 — 2026-11-20
 
 **Skills y plugin.** Las responsabilidades pasan a `skills/<nombre>/SKILL.md` en el formato

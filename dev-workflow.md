@@ -12,6 +12,8 @@ en su documento, y sólo ahí.
 1. Leé las **invariantes**: valen siempre.
 2. Leé el **perfil del proyecto** (`project-profile.md`, raíz del repo): stack, comandos,
    convenciones.
+   Si el repo tiene `.product/`, leé su `README.md` y lo que indique: estado y decisiones del
+   producto (plantilla en `templates/product/`).
 3. Decidí si **resolvés o coordinás** (abajo).
 4. Clasificá la tarea y cargá **sólo** lo que indica el routing. Leer lo que no aplica es
    costo, no precaución.

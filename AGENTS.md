@@ -16,6 +16,7 @@ Cuando trabajás en **otro** repo, este archivo no se lee. El punto de entrada e
 | `dev-workflow.md` | Invariantes transversales y routing. Nada técnico. |
 | `skills/<nombre>/SKILL.md` | El "cómo" de una responsabilidad concreta del trabajo diario, en formato Agent Skills (`name` y `description` arriba). |
 | `templates/project-profile.md` | Sólo la plantilla de hechos locales de un proyecto. |
+| `templates/product/` | Sólo la plantilla del contexto de producto (`.product/`) de un proyecto. |
 | `templates/claude-hook/` | El hook que lleva el harness a las sesiones en la nube de Claude Code. |
 | `.claude-plugin/`, `hooks/` | Empaquetado como plugin. No llevan reglas. |
 | `SECURITY.md` | Cómo reportar una regla insegura. |
