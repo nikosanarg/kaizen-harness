@@ -60,7 +60,8 @@ entre proyectos va en la plantilla de perfil, no acá.
 
 **Nada que dependa de ejecutar algo.** El harness funciona leyendo documentación. El
 empaquetado (`.claude-plugin/`, `hooks/`, `templates/claude-hook/`) sólo hace llegar los
-archivos y cargar `dev-workflow.md`; ninguna regla depende de él, y sin él todo se lee por ruta.
+archivos, cargar `dev-workflow.md` y, en la nube, activar el `commit-msg` de
+`herramientas/git-hooks/`; ninguna regla depende de él, y sin él todo se lee por ruta.
 Lo mismo vale para `herramientas/`: ayudan a cumplir una regla, pero la regla se entiende y se
 puede cumplir sin ellas.
 

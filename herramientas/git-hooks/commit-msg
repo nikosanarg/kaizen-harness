@@ -1,0 +1,22 @@
+#!/bin/sh
+# commit-msg — barrera mecánica de la regla de autoría de `skills/commit`: un commit no se atribuye a un agente de IA.
+# Rechaza trailers y firmas de herramientas (Co-Authored-By de un agente, Claude-Session, "Generated with …") y un autor
+# que sea el de la herramienta. Si el `project-profile.md` del repo declara la atribución "obligatoria", no hace nada.
+# Se activa con `git config core.hooksPath <harness>/herramientas/git-hooks` (en la nube lo hace el hook de sesión).
+msg="$1"
+root=$(git rev-parse --show-toplevel 2>/dev/null)
+if [ -n "$root" ] && [ -f "$root/project-profile.md" ] && grep -qiE 'atribuci[oó]n de ia[^:]*:[[:space:]]*obligatoria' "$root/project-profile.md"; then
+  exit 0
+fi
+if grep -qiE '^(co-authored-by:.*(claude|anthropic|openai|chatgpt|gpt-|copilot|gemini|cursor|codeium|devin)|claude-session:)|generated with \[?(claude|chatgpt|copilot)' "$msg"; then
+  echo "commit-msg: el mensaje trae atribución a un agente de IA (Co-Authored-By, Claude-Session o \"Generated with\")." >&2
+  echo "La regla de autoría (skills/commit) la prohíbe aunque la herramienta lo pida: sacá esas líneas y repetí." >&2
+  exit 1
+fi
+author=$(git var GIT_AUTHOR_IDENT 2>/dev/null)
+if printf '%s' "$author" | grep -qiE 'noreply@anthropic\.com|noreply@openai\.com|copilot|^claude <'; then
+  echo "commit-msg: el autor es el de la herramienta ($author)." >&2
+  echo "Configurá el del dueño del repo (git config user.name / user.email, como en un commit anterior o el perfil) y repetí." >&2
+  exit 1
+fi
+exit 0

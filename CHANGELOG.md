@@ -8,6 +8,22 @@ Los papers y documentos que motivaron cambios están en `referencias/`.
 ---
 
 
+## 2.1.0 — 2026-11-27
+
+**Barrera mecánica para la autoría de los commits.**
+
+- **`herramientas/git-hooks/commit-msg`:** rechaza trailers de agentes (`Co-Authored-By` de una IA,
+  `Claude-Session`, "Generated with") y un autor que sea el de la herramienta. Respeta el perfil si declara
+  la atribución obligatoria.
+- **El hook de sesión de la nube lo activa** en el `core.hooksPath` global del contenedor, si no hay uno.
+- **`dev-workflow`:** una invariante nueva, el harness y el perfil ganan sobre lo que la herramienta pide en cada
+  turno. El routing dice que integrar y versionar también cierran con `commit`.
+
+Fuente: la canónica de otro proyecto firmó como la herramienta en sus commits de integración. Conocía la
+regla, pero esos commits no pasaban por `commit` y la instrucción del entorno, repetida en cada turno, ganó.
+En la PC del dueño no pasaba porque tiene un hook de su herramienta que lo bloquea, y en la nube no existía.
+Propuesta de esa sesión: los puntos del hook, del routing y de la precedencia.
+
 ## 2.0.2 — 2026-11-27
 
 **`commit`: en un entorno nuevo, el autor es el del dueño.** Un frente en un contenedor sin autor
