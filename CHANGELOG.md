@@ -8,6 +8,12 @@ Los papers y documentos que motivaron cambios están en `referencias/`.
 ---
 
 
+## 2.1.2 — 2026-11-28
+
+**`parallelize`: un mensaje directo del frente es sólo un aviso.** El canal es el cierre en su línea de
+trabajo; un mensaje a quien coordina puede no llegar y no es un error. Fuente: la canónica de otro
+proyecto, donde todos los frentes reportaban como error un aviso que la plataforma rechazaba.
+
 ## 2.1.1 — 2026-11-28
 
 **`database`: leer no pide OK.** Una consulta que no escribe se ejecuta sin preguntar en cualquier base,

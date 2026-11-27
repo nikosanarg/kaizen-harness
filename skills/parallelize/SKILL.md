@@ -118,7 +118,8 @@ donde se lo retoma. **El frente termina con un último cambio que sólo cierra e
 lo declara terminado**, con un asunto que empieza con `HANDOFF:`; nada va después. Así quien
 coordina sabe que terminó sin preguntarle ni adivinar por silencio (un
 frente que publica avances a mitad de camino parece terminado), y ese cambio final no se
-integra.
+integra. Un mensaje directo a quien coordina es, a lo sumo, un aviso: puede no llegar, y que
+falle no es un error del frente ni algo para reportar.
 
 Contenido, en este orden:
 
