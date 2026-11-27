@@ -168,6 +168,12 @@ recursos—, se propaga a todos; si no, divergen desde el primer paso.
 por el contexto ni por la máquina de quien coordina, y sigue aunque quien coordina se corte.
 Repartir en agentes locales es la excepción, no el atajo.
 
+**Antes de lanzar, que cada frente pueda trabajar solo.** Los permisos con que arranca (los
+heredados de quien lo lanza y los del repositorio) tienen que dejarle hacer el trabajo de su
+línea sin confirmación del usuario: editar, compilar, testear, guardar y publicar ahí. Si no,
+cada paso espera a alguien que no está mirando. Si no se puede asegurar, se le dice al usuario
+antes de lanzar, no después.
+
 **Cada frente en su propio espacio aislado.** Sobre uno compartido, cada cambio queda
 integrado al escribirse y la verificación de cierre mide lo que otros tenían a medio hacer.
 

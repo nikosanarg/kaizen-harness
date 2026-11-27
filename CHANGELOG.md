@@ -8,6 +8,13 @@ Los papers y documentos que motivaron cambios están en `referencias/`.
 ---
 
 
+## 2.1.3 — 2026-11-28
+
+**`parallelize`: antes de lanzar, que el frente pueda trabajar solo.** Los permisos con que arranca tienen
+que dejarle hacer el trabajo de su línea sin pedir confirmación. Si no, se le avisa al usuario antes de
+lanzar. Fuente: la canónica de otro proyecto lanzó una tanda con permisos que pedían confirmación por
+cada comando, y el dueño no estaba.
+
 ## 2.1.2 — 2026-11-28
 
 **`parallelize`: un mensaje directo del frente es sólo un aviso.** El canal es el cierre en su línea de
