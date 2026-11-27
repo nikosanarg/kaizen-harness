@@ -8,6 +8,14 @@ Los papers y documentos que motivaron cambios están en `referencias/`.
 ---
 
 
+## 2.1.1 — 2026-11-28
+
+**`database`: leer no pide OK.** Una consulta que no escribe se ejecuta sin preguntar en cualquier base,
+también en producción. Lo que traiga con datos personales se agrega o se enmascara, no se copia. La
+skill se carga antes de cualquier SQL contra una base real, no sólo en un cambio de datos: una sesión
+que investigaba con una consulta no la cargaba, y quedaba con la cautela genérica. Fuente: el usuario,
+"las consultas no necesitan validar nada", para todos los repos.
+
 ## 2.1.0 — 2026-11-27
 
 **Barrera mecánica para la autoría de los commits.**

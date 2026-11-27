@@ -1,6 +1,6 @@
 ---
 name: database
-description: "Cambiar esquema, migraciones o acceso a datos persistidos, y ejecutar SQL contra una base real con seguridad. Usar en cambios de datos, antes de implement."
+description: "Cambiar esquema, migraciones o acceso a datos persistidos, y ejecutar o consultar SQL contra una base real con seguridad. Usar en cambios de datos, antes de implement, y antes de cualquier SQL contra una base real, aunque sea sólo leer."
 ---
 
 # Database
@@ -72,7 +72,9 @@ escribe:
 **4. ¿Cuánto toca?** Se mide antes con una consulta de sólo lectura: cuántas filas, cómo se
 distribuyen, extremos. Esa cifra se compara con el resultado y entra en el reporte.
 
-**5. ¿Hay permiso?** Depende de la base:
+**5. ¿Hay permiso?** **Leer no pide OK en ninguna base, tampoco en producción**: una consulta que no
+escribe se ejecuta y se reporta. Lo que devuelva con datos personales se cuenta, se agrega o se
+enmascara; no se copia al chat ni al reporte. Para lo que escribe, depende de la base:
 - **La base de desarrollo o de prueba** (la que no usan los usuarios): la sesión canónica ejecuta
   sin pedir OK, también migraciones y lo destructivo que el trabajo necesite, y lo dice en el
   reporte. Esperar un OK por cada sentencia ahí frena la integración sin proteger nada.
