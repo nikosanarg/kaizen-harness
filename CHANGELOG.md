@@ -8,6 +8,14 @@ Los papers y documentos que motivaron cambios están en `referencias/`.
 ---
 
 
+## 2.0.1 — 2026-11-27
+
+**`database`: contra la base de desarrollo no se pide OK.** La sesión canónica ejecuta SQL y
+migraciones en la base de desarrollo o de prueba sin pedir permiso, y lo reporta; producción
+sigue pidiendo un pedido explícito con su alcance. El frente sigue sólo leyendo. Fuente: el
+usuario: "que no me pidas permiso nunca más para sqls en development. Solo main/master. [...]
+Es metodología de trabajo que debería estar representada en el harness".
+
 ## 2.0.0 — 2026-11-27
 
 **`test`: el objetivo de cobertura es 100%.** Cambia de sentido la regla anterior ("se

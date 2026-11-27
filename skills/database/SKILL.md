@@ -72,9 +72,16 @@ escribe:
 **4. ¿Cuánto toca?** Se mide antes con una consulta de sólo lectura: cuántas filas, cómo se
 distribuyen, extremos. Esa cifra se compara con el resultado y entra en el reporte.
 
-**5. ¿Hay permiso?** Lo destructivo (borrar, sobrescribir, actualizar en masa) se ejecuta sólo con
-un pedido explícito del usuario que defina el alcance. Si la medición muestra algo que el pedido
-no previó, se pregunta antes: filas que no esperaba, datos que se pierden sin vuelta.
+**5. ¿Hay permiso?** Depende de la base:
+- **La base de desarrollo o de prueba** (la que no usan los usuarios): la sesión canónica ejecuta
+  sin pedir OK, también migraciones y lo destructivo que el trabajo necesite, y lo dice en el
+  reporte. Esperar un OK por cada sentencia ahí frena la integración sin proteger nada.
+- **La base de producción**: lo destructivo (borrar, sobrescribir, actualizar en masa) y toda
+  migración se ejecutan sólo con un pedido explícito del usuario que defina el alcance. Si la
+  medición muestra algo que el pedido no previó, se pregunta antes: filas que no esperaba, datos
+  que se pierden sin vuelta.
+
+Un frente (`parallelize`) contra cualquier base real sólo lee: ejecutar es de la sesión canónica.
 
 Construcción:
 - **Idempotente.** Correrla dos veces no hace daño: `IF NOT EXISTS`, una marca o referencia única
