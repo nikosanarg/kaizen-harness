@@ -78,7 +78,9 @@ integración y sigue.
 
 - Sólo dentro del territorio declarado.
 - No integrar el propio frente: lo hace quien reúne todos (ver "Al reintegrar"; `commit`
-  para cada integración parcial).
+  para cada integración parcial). **En su propia línea, en cambio, guarda y publica sin pedir
+  permiso**, tan seguido como haga falta: es su espacio, y es lo que ve quien coordina. Lo
+  vedado es la rama principal y las líneas ajenas.
 - **Lo nuevo se inventaria, no se testea todavía.** Aislado, un frente testea contra su
   suposición de los demás; si no coincide, el test describe algo que nunca existió. Deja en
   el feedback qué casos, componentes y contratos merecen test (`test` decide). Excepción:

@@ -17,6 +17,10 @@ declaran en el perfil con su motivo. Sigue prohibido el test que no puede fallar
 de perfil pide el umbral actual y las exclusiones. Fuente: el usuario, al pedir CI en un
 proyecto: "100% de cobertura, es lo que debería decir el harness".
 
+**`parallelize`: el frente publica en su línea sin pedir permiso.** La prohibición es la rama
+principal y las líneas ajenas, no la propia. Fuente: el usuario, al ver frentes que frenaban a
+pedir permiso para guardar en su rama.
+
 **`parallelize`: contra una base real, el frente sólo lee.** Escritura, esquema y migraciones
 quedan como archivos en su línea, con el orden de aplicación en el feedback, y los aplica
 quien integra. Fuente: el usuario, al definir que los SQL los aplica la orquestadora y los
